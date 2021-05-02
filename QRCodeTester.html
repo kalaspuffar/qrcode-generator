@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>QRCodeTester</title>
+    </head>
+    <body>
+
+        <input id="quality"/><br>
+
+        <textarea id="text"></textarea><br>
+
+        <img id="result" src="" />
+
+        <script>
+            const qualityEl = document.getElementById('quality');
+            const textEl = document.getElementById('text');
+            const resultEl = document.getElementById('result');
+
+            textEl.addEventListener('change', function() {
+                const qualityText = qualityEl.value;
+                const textStr = encodeURI(textEl.value);
+                result.src = 'https://chart.googleapis.com/chart?cht=qr&chld=' + qualityText + '&chs=500x500&chl=' + textStr;
+            });
+        </script>
+    </body>
+</html>
